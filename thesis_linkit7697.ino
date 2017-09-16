@@ -1,10 +1,10 @@
 #include <LWiFi.h>
 
-char ssid[] = "ssid";     
-char pass[] = "password";
+char ssid[] = "ssid";    //<----------------------Name of your network 
+char pass[] = "password";//<----------------------passwork of your network
 
 int status = WL_IDLE_STATUS;
-char server[] = "server";  
+char server[] = "server";  //<--------------------Server name
 WiFiClient client;
 
 unsigned long lastConnectionTime = 0;            // last time you connected to the server, in milliseconds
@@ -122,7 +122,7 @@ void connectionToServer(String b,int isTeacher,String info){
       path.concat(info);
       path.concat(endOfPath);    
       client.println(path);
-      client.println("Host:  server");
+      client.println("Host:  server");//<--------------------Server name
       client.println("Accept: */*");
       client.println("Connection: close");
       client.println();
